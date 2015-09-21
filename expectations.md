@@ -1,6 +1,7 @@
 # Course Expectations
 *Use this document as a template for your own version.*
 
-## Expectations of Work
-
-## Expectations of Student Conduct
+- ## Expectations of Work
+  - Understanding the code
+  -
+- ## Expectations of Student Conduct
