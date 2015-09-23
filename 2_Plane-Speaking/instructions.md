@@ -22,4 +22,11 @@ So we have our list of X-Planes, but no info about them. Since the `<li>` tag ca
 
 Yes, you can [use Wikipedia](https://en.wikipedia.org/wiki/List_of_X-planes), but don't copy/paste!.
 
-Don't forget that you want to add these elements in the loop, not in the HTML. How could we do this easily? Would arrays help? 
+Don't forget that you want to add these elements in the loop, not in the HTML. How could we do this easily? Would arrays help?
+
+### Pics or it didn't fly
+Alright great. We have a list item with a description for each airplane, but who wants to *read* about these things, amirite??? Let's add some pictures (again, Wikipedia's fine).
+
+The amount of info about our planes is getting a little complex. We might want to consider moving the array of info (or object, hint hint) to another file and link that before our `app.js`.
+
+Also, at this point, we might consider moving from a list element to separate `<div>` elements for each aircraft.
