@@ -22,4 +22,4 @@ So we have our list of X-Planes, but no info about them. Since the `<li>` tag ca
 
 Yes, you can [use Wikipedia](https://en.wikipedia.org/wiki/List_of_X-planes), but don't copy/paste!.
 
-Don't forget that you want to add these elements in the loop, not in the HTML. How could we do this easily? Would arrays help?
+Don't forget that you want to add these elements in the loop, not in the HTML. How could we do this easily? Would arrays help? 
