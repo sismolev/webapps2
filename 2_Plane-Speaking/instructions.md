@@ -9,7 +9,7 @@ can be named anything we want; it only exists in the scope of the loop. We use "
 
 There are other ways of writing `for` loops and we will use some of them. However, this version, while annoying to write, also happens to be the fastest.
 
-##Primary Objective
+## Primary Objective
 Using the `document` methods we learned about in Lesson 1 and a `for` loop, use `app.js` to add a list item (`<li>`) for each experimental aircraft in our array.
 
 ## Secondary Objectives
