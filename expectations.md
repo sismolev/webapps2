@@ -1,7 +1,7 @@
 # Course Expectations
-*Use this document as a template for your own version.*
 
 - ## Expectations of Work
-  - Understanding the code
-  -
+  - Understanding the details of the code and the purpose behind it
+  - Learning JavaScript and HTML
 - ## Expectations of Student Conduct
+  -  Not calling out and interrupting
