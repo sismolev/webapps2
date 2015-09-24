@@ -10,9 +10,11 @@ var xPlanes = [
 
 // Now that we have our array of planes, we need to add elements to our DOM
 // for each one.
-var e = document. //This line is unfinished! Use a method to capture our <ul> element.
+var e = document.createElement("ul") //This line is unfinished! Use a method to capture our <ul> element.
 
 for(var i=0; i<xPlanes.length; i++) {
-  var xPlane = xPlanes[i]; //What does "i" refer to?
+  var xPlane = xPlanes[i];
+  xPlane 
+  //What does "i" refer to?
   // Do some things to add <li> elements to our empty list.
 }
