@@ -14,7 +14,15 @@ var e = document.createElement("ul") //This line is unfinished! Use a method to 
 
 for(var i=0; i<xPlanes.length; i++) {
   var xPlane = xPlanes[i];
-  xPlane 
+  <ol id="planes-list">
+  <li>X-1</li>
+  <li>X-3</li>
+  <li>X-15</li>
+  <li>X-29</li>
+  <li>X-31</li>
+  <li>X-37</li>
+  <li>X-45</li>
+  </ol>
   //What does "i" refer to?
   // Do some things to add <li> elements to our empty list.
 }
