@@ -17,6 +17,13 @@ Take a moment to check out the Foundation documentation before jumping into the 
 We're going to make a homepage for our app development firm. Of course we'll eventually need a logo and some images, but we also have some basic website essentials like a nav, intro sections, etc. And of course, we need to make the site *responsive*—resizeable for mobile devices.
 
 ## Primary Objective
-Use the Foundation classes to get this homepage looking right. There's more than one right answer to this assignment, so long as the site responds well and lookgs good.
+Use the Foundation classes to get this homepage looking right. There's more than one right answer to this assignment, so long as the site responds well and looks good.
+
+One thing we'll need for sure is to clean up that nav. Look in the documentation for a nav bar.
 
 ## Secondary Objectives
+### Oooh, pretty pictures!
+The named divs could use some image love. We could also maybe use a slider for "hero pictures" up above the named divs.
+
+### Add some style
+Use `main.css` to add some custom styles. As a recommendation, maybe a custom color for the headers in the named divs?
