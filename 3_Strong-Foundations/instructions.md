@@ -9,4 +9,14 @@ The amount of CSS required to make a modern-looking website can be daunting. Als
 
 We will stand on the shoulders of CSS giants.
 
-One very popular CSS framework is [Bootstrap](http://getbootstrap.com). Bootstrap is great, but in a little bit of flux right now. Instead, we will use [Foundation](http://foundation.zurb.com/). The
+One very popular CSS framework is [Bootstrap](http://getbootstrap.com). Bootstrap is great, but in a little bit of flux right now. Instead, we will use [Foundation](http://foundation.zurb.com/). The source code has been included in this file. We'll use it for our responsive homepage.
+
+Take a moment to check out the Foundation documentation before jumping into the objectives.
+
+## Mustang Apps, Inc.
+We're going to make a homepage for our app development firm. Of course we'll eventually need a logo and some images, but we also have some basic website essentials like a nav, intro sections, etc. And of course, we need to make the site *responsive*—resizeable for mobile devices.
+
+## Primary Objective
+Use the Foundation classes to get this homepage looking right. There's more than one right answer to this assignment, so long as the site responds well and lookgs good.
+
+## Secondary Objectives
