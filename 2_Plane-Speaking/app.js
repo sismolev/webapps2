@@ -2,7 +2,7 @@ var xPlanes = [
 {
     "name":"X-1",
     "description":"First plane to break the speed of sound",
-    "imageURL": "https://en.wikipedia.org/wiki/List_of_X-planes#/media/File:Bell_X-1_46-062_(in_flight).jpg"
+    "imageURL": "https://upload.wikimedia.org/wikipedia/commons/5/50/Bell_X-1_46-062_%28in_flight%29.jpg"
 },
 {
   "name":"X-3",
@@ -42,15 +42,14 @@ var e = document.getElementById("planes-list");
 
 for(var i in xPlanes) {
   var xPlane = xPlanes[i]
-  e.innerHTML =
-  "<h1>" +
+  e.innerHTML +=
+  "<h2>" +
   xPlane.name +
-  "</h1>" +
+  "</h2>" +
   "<p>" +
   xPlane.description +
   "</p>" +
   "<img src='" +
   xPlane.imageURL +
-  "' height='30%' width='50%'" +
-  "</img>"
+  "' width='500px'/>";
 }
