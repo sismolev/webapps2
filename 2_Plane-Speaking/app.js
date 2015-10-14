@@ -7,32 +7,32 @@ var xPlanes = [
 {
   "name":"X-3",
  "description":"Used to test long-duration high-speed flight",
- "imageURL":"https://en.wikipedia.org/wiki/List_of_X-planes#/media/File:Douglas_X-3_NASA_E-17348.jpg"
+ "imageURL":"https://upload.wikimedia.org/wikipedia/commons/3/32/Douglas_X-3_NASA_E-17348.jpg"
 },
 {
   "name":"X-15",
  "description":"Used for hypersonic high-altitude testing, and was the first manned hypersonic plane with the ability of suborbital space-flight",
- "imageURL":"https://en.wikipedia.org/wiki/List_of_X-planes#/media/File:X-15_in_flight.jpg"
+ "imageURL":"https://upload.wikimedia.org/wikipedia/commons/d/d6/X-15_in_flight.jpg"
 },
 {
   "name":"X-29",
  "description":"Had forward-swept wings",
- "imageURL":"https://en.wikipedia.org/wiki/List_of_X-planes#/media/File:Grumman-X29-InFlight.jpg"
+ "imageURL":"https://upload.wikimedia.org/wikipedia/commons/9/91/Grumman-X29-InFlight.jpg"
 },
 {
   "name":"X-31",
  "description":"Used thrust vectoring",
- "imageURL":"https://en.wikipedia.org/wiki/List_of_X-planes#/media/File:Rockwell-MBB_X-31_landing.JPG"
+ "imageURL":"https://upload.wikimedia.org/wikipedia/commons/8/80/Rockwell-MBB_X-31_landing.JPG"
 },
 {
   "name":"X-37",
  "description":"Reusable orbital spaceplane",
- "imageURL":"https://en.wikipedia.org/wiki/List_of_X-planes#/media/File:Boeing_X-37B_inside_payload_fairing_before_launch.jpg"
+ "imageURL":"https://upload.wikimedia.org/wikipedia/commons/e/ee/Boeing_X-37B_inside_payload_fairing_before_launch.jpg"
 },
 {
   "name":"X-45",
  "description":"Unmanned combat plane",
- "imageURL":"https://en.wikipedia.org/wiki/List_of_X-planes#/media/File:Boeing_X-45A_UCAV.jpg"
+ "imageURL":"https://upload.wikimedia.org/wikipedia/commons/b/b1/Boeing_X-45A_UCAV.jpg"
 }
 ];
 
