@@ -1,64 +1,97 @@
-# 4: The Ground 4loor
-It's time to add some usefulness to our site. This includes extra pages as well as functionality in a contact form. To do this, we're going to move on from our good ol' standby of `document`. Let's admit it: `document.getElementById()` is kind of a annoying, to say nothing of `element.appendChild()` or `element.createTextNode()`, or even `element.innerHTML`. There has to be a better way.
+<!-- TOC depth:6 withLinks:1 updateOnSave:1 orderedList:0 -->
 
-There is! It's [**jQuery**](http://jquery.com)
+- [5: Into the Fire(base)](#5-into-the-firebase)
+	- [Persistence is a Virtue](#persistence-is-a-virtue)
+	- [All Your Data are Belong to Us](#all-your-data-are-belong-to-us)
+		- [Developer, choose your weapon](#developer-choose-your-weapon)
+		- [Firebasics](#firebasics)
+		- [Getting started with Firebase](#getting-started-with-firebase)
+			- [READ THE DOCS](#read-the-docs)
+	- [Objectives](#objectives)
+		- [Primary Objectives](#primary-objectives)
+		- [Secondary Objectives](#secondary-objectives)
+<!-- /TOC -->
 
-## What is jQuery?
-jQuery is a JavaScript library that focuses on making annoying steps in working with the DOM easier. There are a few other additional tools that generally make JavaScript an easier language to use.
+# 5: Into the Fire(base)
+## Persistence is a Virtue
+So we've added some functionality to our webapps using jQuery. We've even learned how to submit form data using jQuery, sending POST data off to some remote server, where the data will be dealt with appropriately.
 
-On the other hand, jQuery introduces an often-confusing concept for new programmers, but one that is necessary to for web development: **callbacks**.
+But what happens to those data? We need a **persistence layer** to save our information for later use. A persistence layer could be any number of things: a text file, a .csv spreadsheet, or something more complex. Surprise surprise, we'll be using something *moderately* complex: a database.
 
-## Callbacks/Anonymous Functions
-In JavaScript, as in any other programming language, we use **functions** to contain useful code that we'll call upon over and over. The syntax for this looks like:
+## All Your Data are Belong to Us
+Our work thus far has been in the realm of **front end development**: the part the users sees. But the database lives in the **back end**: on the server, away from prying eyes. Obviously the two work together, but it's important to understand where things actually live.
 
-    function foo(arg) {
-      var answer = arg * 7;
-      return answer;
-    }
-Alternatively, we can use the `var` declarator to name a function:
+Alright, so we're storing data in the back end. We're doing so in a database. *Which database*???
 
-    var foo = function(arg) {
-      return arg * 7;
-    }
+### Developer, choose your weapon
+There are *tons* of database options out there. Here at Mirman, we use 3 in production for our school's software services: **MySQL** (and variants like **MariaDB**), **Redis**, and **MongoDB**. Each one is excellent for different applications and different types of data. We'll go into more detail on types of databases in later lessons. For now, just know that there are a lot of choices out there.
 
-Same deal. But sometimes we don't want to bother committing a function to memory space because we will only need at very specific points in our program's runtime. In this case, we can use **anonymous functions**. Anonymous functions appear often as arguments to other functions. Consider the following example.
+And we're not going to use any of the choices above for this exercise! Helpful, right? There's a reason, I promise. To get started with databases, I want you to use a database technology that's as close to the form you've been using so far for information: namely, JSON. We're therefore going to use a friendly, web-hosted database for applications called [Firebase](https://www.firebase.com/).
 
-### `strModify()`
-Suppose I have a function called `strModify()` that takes two arguments: a string, and a function that will modify the string in a special way. The function definition is as follows:
+### Firebasics
 
-    function strModify(str, func) {
-      return func(str);
-    }
+To get going using Firebase, you really only need to know 2 things:
+1. Firebase stores JSON.
+2. Firebase is **event-driven**.
 
-So whatever string I pass to `str` when I call `strModify` will then be used as an argument to the `func` function.
+You should know by now that JSON is JavaScript Object Notation. Essentially this means that my data is all stored within key-value pairs. Like so:
 
-Now let's suppose that in my program, the string modifications I'll need to use vary greatly, so there's no need to save the functions in variables; it makes more sense to just define the function when I need it. That's what anonymous functions are for! Here's a simple—if contrived—example, first without an anonymous function:
+    [
+      {
+        name: "Blue widget",
+        color: "blue",
+        price: 3.99
+      },
+      {
+        name: "Red widget",
+        color: "red",
+        price: 4.99
+      }
+    ]
 
-    //Without Anonymous Functions
-    //First we define the function we'll use to modify the string
-    function capitalize(str) {
-      return str.slice(0,1).toUpperCase() + str.slice(1);
-    }
-    //Then we call strModify()
-    strModify("bob",capitalize);
+Nice and clean, and easily parsed by JS when we load the data into the front end.
 
-Notice that in the example above we don't add parens after `capitalize` when we use the function as an argument in `strModify()`. That's because we're not actually *calling* the function there; we're referring to it. We do, however, call it inside of `strModify()` with the line `return func(str);`. That will call *any* function we pass as the second argument to `strModify()`.
+Now what about "event-driven"? You've seen event-driven code already, when we wrote a handler for form submission, or button clicks in jQuery. Remember?
 
-Alright, but we're going to use a bunch of different string modifications, and we have decided it's not necessary to save them outside each call to `strModify()`. Cool. Here's what the same code looks like with anonymous functions:
-
-    //call strModify and define function all in one!
-    strModify("bob", function(str) {
-      return str.slice(0,1).toUpperCase() + str.slice(1);
+    $("#my-button").click(function(){
+        // Do something when a click happens
     });
 
-That looks a little crazy, but the `})` pattern you see on that last line will become very familiar to you. Notice where the comma is after `"bob"`—the next piece of code we see is the beginning of a function definition. We write the whole capitalization function right inside the call to `strModify()`, *as the second argument*!
+The `click` there is an event. Remember the other way to write that?
 
-That's how anonymous functions work.
+    $("#my-button").on("click", function(){
+        // Do something when a click happens
+    });
+
+The `on` function is your hint that we're telling JS what to do when a certain event occurs. Firebase works the same way. When an entry in Firebase changes, gets deleted, gets added, or when you first load—these are all events, and we need to tell our front end what to do for each event we care about. While this seems like a major hassle, there's an upside: once we write the event handlers, our dataset will update automatically, and so will the user's display *without having to reload*!
+
+### Getting started with Firebase
+
+You'll have to sign up for a Firebase account, which you should do with your Mirman account. That allows you do set up "apps". They're not really entire apps, just the database you'll use for one.
+
+Firebase allows you to add data by hand, but that is going to get tedious real quick. Instead, we'll write some JS for our application that does that for us. But before we go any further, we'll need to create a connection between our front end. You might have noticed the URL when you set up your Firebase "app", something like `https://your-app.firebaseio.com`. We're going to need that, along with the Firebase JS code to create our connection.
+
+Somewhere in your `<head>`, you'll need this line to link up Firebase's definitions:
+
+    <script src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+
+Then in `app.js`, you'll use that code (no need to look over it, but feel free) to define a "reference"—the link between Firebase and our front end. Something like:
+
+    var ref = new Firebase("https://your-app.firebaseio.com");
+
+That `new` keyword might look new to you. We'll explain it soon. For now, just know that `ref` becomes an "instance" of a Firebase database.
+
+So now we have a connection, but remember that everything in Firebase is event-driven. Just like we did with form submissions, we need to set up handlers for events. I won't give you that code; you'll have to...
+
+#### READ THE DOCS
+We basically never use anything in this class that doesn't have excellent documentation. [USE IT](https://www.firebase.com/docs/web/guide/retrieving-data.html).
 
 ## Objectives
+We're building a feedback form/page. It will be quite simple, with nothing but a list of feedbacks including time, submitter, and their comment. We'll have a button that pops up a form to add a new comment. That's it!
 
-### Primary Objective
-Write an event handler for form submission on the `contact.html` page. This will require getting values from form items using jQuery. Create a JSON object and log it to the console. After successful collection of the data, clear the form.
+### Primary Objectives
+1. Use jQuery and Firebase to create either a `<ul>` full of `<lis>` for each comment, or just a set of `<div>` elements, one for each comment, showing the comments vital statistics (commenter, date, comment text).
+2. Create a functional form to add new comments.
 
-### Secondary Objective
-When form information is submitted, it needs to go somewhere. Back in the day, we'd send it to a PHP handler. In these JavaScript-dominated days, we might use a Node.js backend to handle form data. I've made one just for you. By sending your JSON data to **http://x.mirman.org:1031/contact**, we can simulate this process. If your code works, you'll get a success notification returned, which you can log from your callback function.
+### Secondary Objectives
+1. Implement a "favorites" feature, where each comment can be "hearted" or "starred" by a given user. Each comments total favorites should be stored as a key in the database.
