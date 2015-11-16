@@ -14,8 +14,8 @@ $(document).ready(function(){
 });
 
 var Url = "http://x.mirman.org:1031/ground4loor";
-   $.post(Url, Data, function(responsedata){
-     console.log(responsedata);
+   $.post(Url, Data, function(response){
+     console.log(response);
    })
 
 //Use jQuery to collect the values from the fields and create a
