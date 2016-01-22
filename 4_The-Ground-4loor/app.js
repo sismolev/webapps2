@@ -2,6 +2,7 @@ $(document).ready(function(){
   $("#contact-form").submit(function(event){
     event.preventDefault();
 
+<<<<<<< HEAD
     var Data = {
       firstName: $("#firstname").val(),
       lastName: $("#lastname").val(),
@@ -10,6 +11,11 @@ $(document).ready(function(){
     }
     console.log(Data);
 
+=======
+    // Secondary Objective: Use the AJAX methods built into jQuery to send
+    // The form data to http://x.mirman.org:1031/ground4loor. Write a callback to handle
+    // the response.
+>>>>>>> 7b619d114a5169a0b2ec36943fc68ea76a4f2d31
   })
 });
 
